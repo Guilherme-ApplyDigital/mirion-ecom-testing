@@ -1,0 +1,31 @@
+{
+  "name": "mirion-ecom-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare:consent": "node scripts/prepare-cookie-consent.js",
+    "test": "playwright test",
+    "test:login": "playwright test tests/login.spec.ts --project=chromium --grep @basic-auth",
+    "test:login:mailslurp": "npm run prepare:consent && playwright test tests/login.spec.ts --project=chromium --grep @mailslurp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilherme-ApplyDigital/mirion-ecom-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guilherme-ApplyDigital/mirion-ecom-testing/issues"
+  },
+  "homepage": "https://github.com/Guilherme-ApplyDigital/mirion-ecom-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mailslurp-client": "^17.2.0"
+  }
+}
